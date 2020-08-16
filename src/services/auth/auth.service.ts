@@ -1,6 +1,5 @@
-
-import {IAccessToken, IUser} from '../../models';
 import {AccessTokenModel} from '../../dataBase';
+import {IAccessToken, IUser} from '../../models';
 
 class AuthService {
   createTokenPair(tokenObject: Partial<IAccessToken>): Promise<IAccessToken> {

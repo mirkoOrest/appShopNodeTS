@@ -1,10 +1,10 @@
 import {NextFunction, Request, Response} from 'express';
 
 import {ActionEnum, LogsEnum, RequestHeadersEnum, ResponseStatusCodesEnum, UserStatusEnum} from '../../constants';
-import {emailService, logService, userService} from '../../services';
+import {CustomErrors, ErrorHandler} from '../../Error';
 import {hashPassword, tokenGenerator} from '../../helpers';
 import {IRequestExtended, IUser} from '../../models';
-import {CustomErrors, ErrorHandler} from '../../Error';
+import {emailService, logService, userService} from '../../services';
 
 class UserController {
   async createUser(req: Request, res: Response, next: NextFunction) {

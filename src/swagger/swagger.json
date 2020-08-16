@@ -1,0 +1,97 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1-alpha",
+    "title": "AppShopNode",
+    "description": "Documentation for AppShopNode"
+  },
+  "paths": {
+    "/auth": {
+      "post": {
+        "tags": ["auth"],
+        "summary": "Auth user",
+        "description": "Method for login user to platform",
+        "operationId": "authUser",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "example@gmail.com"
+            }
+          },
+          {
+            "name": "password",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Pa$sword1234"
+            }
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description": "Auth was successfully",
+            "schema": {
+              "$ref": "#/definitions/authUserResponse"
+            }
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": ["auth"],
+        "summary": "Logout user",
+        "description": "Method for logout user from platform",
+        "operationId": "logoutUser",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+            }
+          }
+        ],
+        "responses": {
+          "200" : {
+            "description": "Logout was successfully"
+          },
+          "401": {
+            "description": "wrong token or dead token",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Something wrong with token"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "authUserResponse": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ"
+        },
+        "refresh_token": {
+          "type": "string",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ"
+        }
+      }
+    }
+  }
+}

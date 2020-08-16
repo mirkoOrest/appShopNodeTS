@@ -1,8 +1,10 @@
-extends src/email-templates/template
+extends template
 block content
     div
         | Welcome to AppNodeShop
+        br
         | confirm your email, click there
+        br
         div
-            a(href=frontendUrl + `/email/confirm/` + token) <--CLICK
+            a(href=frontendUrl + `/email/confirm/` + token) TOKEN
 

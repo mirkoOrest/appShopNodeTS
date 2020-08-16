@@ -1,9 +1,9 @@
 import {NextFunction, Response} from 'express';
 
-import {IRequestExtended, IUser} from '../../models';
-import {productService} from '../../services/product.service';
-import {logService} from '../../services/log.service';
 import {LogsEnum} from '../../constants';
+import {IRequestExtended, IUser} from '../../models';
+import {logService} from '../../services/log';
+import {productService} from '../../services/product';
 
 class ProductController {
 

@@ -1,7 +1,22 @@
 .header {
-    background-color: #748aff;
+    width: 50%;
+    margin: auto 0;
+    font-size: medium;
+    text-align: center;
+    color: white;
+    border: black solid medium;
+    border-radius: initial;
+    background-color: black;
 }
 
 .footer {
-    background-color: #748aff;
+    background-color: white;
+    width: 50%;
+    margin: auto 0;
+    font-size: medium;
+    text-align: center;
+    color: black;
+    border: black solid medium;
+    border-radius: initial;
 }
+

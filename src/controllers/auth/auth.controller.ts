@@ -1,9 +1,10 @@
-import {IRequestExtended, IUser} from '../../models';
 import {NextFunction, Request, Response} from 'express';
-import {comparePasswords, tokenGenerator} from '../../helpers';
+
 import {ActionEnum, RequestHeadersEnum, ResponseStatusCodesEnum} from '../../constants';
-import {authService} from '../../services';
 import {CustomErrors, ErrorHandler} from '../../Error';
+import {comparePasswords, tokenGenerator} from '../../helpers';
+import {IRequestExtended, IUser} from '../../models';
+import {authService} from '../../services';
 
 class AuthController {
   async authUser(req: IRequestExtended, res: Response, next: NextFunction) {

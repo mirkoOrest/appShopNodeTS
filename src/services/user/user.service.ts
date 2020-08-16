@@ -1,8 +1,8 @@
 import {Types} from 'mongoose';
 
+import {ActionEnum} from '../../constants';
 import {UserModel} from '../../dataBase';
 import {IUser, IUserToken} from '../../models';
-import {ActionEnum} from '../../constants';
 
 class UserService {
   createUser(user: Partial<IUser>): Promise<IUser> {
